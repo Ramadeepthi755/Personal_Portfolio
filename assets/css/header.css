@@ -1,0 +1,84 @@
+/* =========================
+   HEADER CLEAN CSS
+   Colors moved to theme.css
+========================= */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    border-bottom:1px solid;
+    height: 90px;
+}
+
+body{
+    padding-top:80px;
+}
+
+/* Logo */
+.nav_logo{
+    font-size:28px;
+    font-weight:800;
+}
+
+/* Links */
+.nav_link{
+    display:flex;
+    gap:22px;
+    overflow-x:auto;
+    white-space:nowrap;
+}
+
+.nav_link a{
+    text-decoration:none;
+    font-size:16px;
+    font-weight:500;
+    transition:0.3s;
+    position:relative;
+}
+
+.nav_link a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-6px;
+    transition:0.3s;
+}
+
+.nav_link a:hover::after{
+    width:100%;
+}
+
+.nav_link a.active{
+    font-weight:700;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .header{
+        padding:15px 20px;
+        gap:10px;
+    }
+
+    .nav_logo{
+        font-size:1rem;
+    }
+
+    .nav_link{
+        gap:14px;
+    }
+
+    .nav_link a{
+        font-size:14px;
+    }
+}

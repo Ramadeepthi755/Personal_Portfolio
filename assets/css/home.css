@@ -1,0 +1,187 @@
+/* =========================
+   HOME SECTION - CLEAN
+   Colors moved to theme.css
+========================= */
+
+.home{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    gap:70px;
+    min-height:100vh;
+    padding:80px 10%;
+    text-align:left;
+    overflow:hidden;
+    position:relative;
+    animation:fadeUp 1s ease forwards;
+}
+
+/* glowing background circles */
+.home::before{
+    content:'';
+    position:absolute;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    top:-80px;
+    right:-60px;
+    filter:blur(70px);
+    animation:floatGlow 6s ease-in-out infinite;
+}
+
+.home::after{
+    content:'';
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    bottom:20px;
+    left:-60px;
+    filter:blur(70px);
+    animation:floatGlow 7s ease-in-out infinite;
+}
+
+/* text side */
+.home-content{
+    max-width:600px;
+    z-index:2;
+    animation:slideLeft 1.2s ease forwards;
+}
+
+.home h1{
+    font-size:4rem;
+    margin-bottom:15px;
+    line-height:1.1;
+}
+
+.home h3{
+    font-size:2rem;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.home p{
+    font-size:1.15rem;
+    margin-bottom:30px;
+    line-height:1.8;
+}
+
+/* image */
+.home_img{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    object-fit:cover;
+    animation:floatImage 4s ease-in-out infinite;
+    z-index:2;
+}
+
+/* buttons */
+.home .btn{
+    padding:14px 28px;
+    margin:8px 10px 8px 0;
+    border:none;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    border-radius:40px;
+    transition:0.4s;
+    text-decoration:none;
+}
+
+.home .btn:hover{
+    transform:translateY(-6px) scale(1.04);
+}
+
+/* social icons */
+.social-icons{
+    display:flex;
+    gap:18px;
+    margin-top:25px;
+}
+
+.social-icon{
+    width:45px;
+    height:45px;
+    padding:10px;
+    border-radius:50%;
+    transition:0.4s;
+    cursor:pointer;
+}
+
+.social-icon:hover{
+    transform:translateY(-8px) rotate(8deg);
+}
+
+/* responsive */
+@media(max-width:768px){
+
+    .home{
+        flex-direction:column;
+        gap:35px;
+        text-align:center;
+        padding:120px 20px 50px;
+    }
+
+    .home h1{
+        font-size:3rem;
+    }
+
+    .home h3{
+        font-size:1.5rem;
+    }
+
+    .home_img{
+        width:250px;
+        height:250px;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes slideLeft{
+    from{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes floatImage{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-18px);
+    }
+}
+
+@keyframes floatGlow{
+    0%,100%{
+        transform:translateY(0) translateX(0);
+    }
+    50%{
+        transform:translateY(20px) translateX(20px);
+    }
+}
